@@ -26,13 +26,8 @@
     [super viewDidLoad];
     std::string tmp = "127.0.0.1";
     int port = 7796;
-    std::string tmp2 = "send_test";
     test.set_server_ip_port(tmp, port);
-    test.set_send_buffer(tmp2);
     test.connect_to_server();
-    test.send_message_to_server();
-    //test.close_connect();
-    
     // Do any additional setup after loading the view.
 }
 
@@ -47,7 +42,7 @@
 - (IBAction)onLogInClick:(id)sender {
     std::string username = [[_username stringValue] UTF8String];
     std::string password = [[_password stringValue] UTF8String];
-    
+    //TODO 这里需要用正则表达式做一次用户名校验
     char message[sizeof(struct somewhere_message)];
     
     somewhere_message config;
@@ -59,10 +54,12 @@
     strncpy(config.password, password.c_str(), password.size());
     memcpy(message, &config, sizeof(struct somewhere_message));
     
-    
+    //向服务器发送消息
     std::string tmp(message);
     test.set_send_buffer(tmp);
     test.send_message_to_server();
+    
+    //从服务器接收回复消息
     test.get_message_from_server();
     reply_message server_message;
     memcpy(&server_message, test.get_recv_buffer().c_str(), sizeof(reply_message));
@@ -76,8 +73,9 @@
 - (IBAction)onSignUpClick:(id)sender{
     std::string username = [[_username stringValue] UTF8String];
     std::string password = [[_password stringValue] UTF8String];
-    //这里需要做一次用户名的检查
+    //TODO 这里需要用正则表达式做一次用户名的检查
     
+    //
     
     char message[sizeof(struct somewhere_message)];
     

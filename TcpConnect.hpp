@@ -8,8 +8,12 @@
 
 #ifndef TcpConnect_hpp
 #define TcpConnect_hpp
+#include <iostream>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
 #include "ConnectServer.hpp"
 #include "SomeHeader.h"
+
 using namespace ddk;
 class TcpConnect : public ConnectServer{
 private:

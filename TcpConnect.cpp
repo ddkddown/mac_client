@@ -23,6 +23,40 @@ TcpConnect::~TcpConnect(){
 }
 
 void TcpConnect::set_server_ip_port(std::string tmp_ip, int tmp_port){
+    std::ifstream fs;
+    boost::property_tree::ptree ptree;
+    
+    fs.open("/Users/dongdakuan/Downloads/mac_client/mac_client/SomeWhereClient/conf/config.json",std::fstream::in);
+    if(!fs.is_open()){
+        std::cout<<"open config.json failed!"<<std::endl;
+    }
+    std::string s((std::istreambuf_iterator<char>(fs)),
+                    std::istreambuf_iterator<char>());
+    std::stringstream ss(s);
+    
+    try {
+        boost::property_tree::read_json(ss, ptree);
+    } catch (std::exception e) {
+        std::cout<<"read json failed! check the json file!"<<std::endl;
+        exit(1);
+    }
+    
+    auto node = ptree.get_child_optional("server_ip")->get_value<std::string>();
+    if(node.empty()){
+        std::cout<<"get server_ip failed!"<<std::endl;
+    }else{
+        std::cout<<"server_ip is "<<node<<std::endl;
+        tmp_ip = node;
+    }
+    
+    node = ptree.get_child_optional("server_port")->get_value<std::string>();
+    if(node.empty()){
+        std::cout<<"get server_port failed!"<<std::endl;
+    }else{
+        std::cout<<"server_port is "<<node<<std::endl;
+        tmp_port = atoi(node.c_str());
+    }
+    
     set_server_ip(tmp_ip);
     set_server_port(tmp_port);
 }
@@ -76,7 +110,6 @@ out:
 
 bool TcpConnect::connect_to_server(){
      bool ret = false;
-    
      if(get_server_port() == -1){
      std::cout<<"port == -1 , that is invalid! return!";
      set_status(false);

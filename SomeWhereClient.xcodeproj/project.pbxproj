@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		462A05E423A51F6F00881DDD /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 462A05E323A51F6F00881DDD /* libboost_system.dylib */; };
+		462A05E823A52BB900881DDD /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 462A05E723A52BB900881DDD /* config.json */; };
 		46F54F172367394400814583 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F54F162367394400814583 /* AppDelegate.m */; };
 		46F54F1A2367394400814583 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46F54F192367394400814583 /* ViewController.mm */; };
 		46F54F1C2367394400814583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F54F1B2367394400814583 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		462A05E123A51D9C00881DDD /* SomeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeHeader.h; sourceTree = "<group>"; };
 		462A05E323A51F6F00881DDD /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = Libs/libboost_system.dylib; sourceTree = "<group>"; };
+		462A05E723A52BB900881DDD /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		46F54F122367394400814583 /* SomeWhereClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeWhereClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F54F152367394400814583 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46F54F162367394400814583 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		462A05E623A52BB900881DDD /* conf */ = {
+			isa = PBXGroup;
+			children = (
+				462A05E723A52BB900881DDD /* config.json */,
+			);
+			path = conf;
+			sourceTree = "<group>";
+		};
 		46F54F092367394300814583 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		46F54F142367394400814583 /* SomeWhereClient */ = {
 			isa = PBXGroup;
 			children = (
+				462A05E623A52BB900881DDD /* conf */,
 				462A05E023A51D8900881DDD /* Headers */,
 				46F54F152367394400814583 /* AppDelegate.h */,
 				46F54F162367394400814583 /* AppDelegate.m */,
@@ -268,6 +279,7 @@
 			files = (
 				46F54F1C2367394400814583 /* Assets.xcassets in Resources */,
 				46F54F1F2367394400814583 /* Main.storyboard in Resources */,
+				462A05E823A52BB900881DDD /* config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
