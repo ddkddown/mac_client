@@ -11,6 +11,7 @@
 
 #include "TcpConnect.hpp"
 #include "SomeHeader.h"
+#include "MainWindowController.h"
 
 @interface ViewController : NSViewController{
     TcpConnect test;

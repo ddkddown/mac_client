@@ -65,6 +65,13 @@
     memcpy(&server_message, test.get_recv_buffer().c_str(), sizeof(reply_message));
     if(server_message.status == SUCCESS_STATUS){
         std::cout<<"message type: "<<server_message.type<<"success"<<std::endl;
+        //隐藏登录界面
+        [[self.view window] orderOut:nil];
+        
+        //显示主窗口
+        MainWindowController* mainWindowControl = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+        [mainWindowControl showWindow:self];
+        
     }else if (server_message.status == FAIL_STATUS){
         std::cout<<"message type: "<<server_message.type<<"failed!"<<std::endl;
         [self showError:@"用户名密码错误，请重新输入"];

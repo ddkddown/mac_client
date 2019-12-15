@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		462A05E423A51F6F00881DDD /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 462A05E323A51F6F00881DDD /* libboost_system.dylib */; };
 		462A05E823A52BB900881DDD /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 462A05E723A52BB900881DDD /* config.json */; };
+		462A05EC23A65C0000881DDD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462A05EB23A65C0000881DDD /* MainWindow.xib */; };
+		462A05F023A65CF700881DDD /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462A05EF23A65CF700881DDD /* MainWindowController.m */; };
 		46F54F172367394400814583 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F54F162367394400814583 /* AppDelegate.m */; };
 		46F54F1A2367394400814583 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46F54F192367394400814583 /* ViewController.mm */; };
 		46F54F1C2367394400814583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F54F1B2367394400814583 /* Assets.xcassets */; };
@@ -40,6 +42,9 @@
 		462A05E123A51D9C00881DDD /* SomeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeHeader.h; sourceTree = "<group>"; };
 		462A05E323A51F6F00881DDD /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = Libs/libboost_system.dylib; sourceTree = "<group>"; };
 		462A05E723A52BB900881DDD /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		462A05EB23A65C0000881DDD /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		462A05EF23A65CF700881DDD /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		462A05F123A65D0E00881DDD /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		46F54F122367394400814583 /* SomeWhereClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeWhereClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F54F152367394400814583 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46F54F162367394400814583 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +146,9 @@
 				46F54F202367394400814583 /* Info.plist */,
 				46F54F212367394400814583 /* main.m */,
 				46F54F232367394400814583 /* SomeWhereClient.entitlements */,
+				462A05EB23A65C0000881DDD /* MainWindow.xib */,
+				462A05EF23A65CF700881DDD /* MainWindowController.m */,
+				462A05F123A65D0E00881DDD /* MainWindowController.h */,
 			);
 			path = SomeWhereClient;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462A05EC23A65C0000881DDD /* MainWindow.xib in Resources */,
 				46F54F1C2367394400814583 /* Assets.xcassets in Resources */,
 				46F54F1F2367394400814583 /* Main.storyboard in Resources */,
 				462A05E823A52BB900881DDD /* config.json in Resources */,
@@ -304,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462A05F023A65CF700881DDD /* MainWindowController.m in Sources */,
 				46F54F482367397600814583 /* TcpConnect.cpp in Sources */,
 				46F54F1A2367394400814583 /* ViewController.mm in Sources */,
 				46F54F222367394400814583 /* main.m in Sources */,
