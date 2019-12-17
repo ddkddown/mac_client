@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MainWindowController.h"
 @implementation MainWindowController
-
+- (IBAction)onSubmmitClick:(id)sender{
+    _articleName.stringValue = @"";
+}
 
 @end

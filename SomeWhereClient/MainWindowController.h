@@ -14,5 +14,15 @@
     
     
 }
+@property(nonatomic, retain)IBOutlet NSTextField* articleName;
+@property (weak) IBOutlet NSView *contents;
+
+@property(nonatomic, retain)IBOutlet NSOutlineView* articleList;
+
+
+
+- (IBAction)onNewClick:(id)sender;
+- (IBAction)onResetClick:(id)sender;
+- (IBAction)onSubmmitClick:(id)sender;
 @end
 #endif /* MainWindowController_h */
