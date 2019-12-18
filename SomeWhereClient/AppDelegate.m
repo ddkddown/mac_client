@@ -15,7 +15,7 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-
+    [self initMainWindow];
     // Insert code here to initialize your applicationf
 }
 
@@ -24,5 +24,9 @@
     // Insert code here to tear down your application
 }
 
-
+- (void)initMainWindow{
+    _loginWindow = [[LoginWindow alloc] initWithWindowNibName:@"LoginWindow"];
+    [[_loginWindow window] center];
+    [_loginWindow.window orderFront:nil];
+}
 @end

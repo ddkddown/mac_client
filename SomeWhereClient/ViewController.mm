@@ -66,11 +66,12 @@
     if(server_message.status == SUCCESS_STATUS){
         std::cout<<"message type: "<<server_message.type<<"success"<<std::endl;
         //隐藏登录界面
-        [[self.view window] orderOut:nil];
+        //[[self.view window] orderOut:nil];
         
         //显示主窗口
-        MainWindowController* mainWindowControl = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
-        [mainWindowControl showWindow:self];
+        //MainWindowController* mainWindowControl = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+        //[mainWindowControl showWindow:self];
+        
         
     }else if (server_message.status == FAIL_STATUS){
         std::cout<<"message type: "<<server_message.type<<"failed!"<<std::endl;

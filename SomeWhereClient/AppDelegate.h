@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "LoginWindow.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
+@property (strong) LoginWindow* loginWindow;
 
 @end
 

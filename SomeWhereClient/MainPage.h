@@ -1,21 +1,18 @@
 //
-//  MainWindowController.h
+//  MainPage.h
 //  SomeWhereClient
 //
-//  Created by dong da kuan on 2019/12/15.
+//  Created by dong da kuan on 2019/12/18.
 //  Copyright © 2019年 dong da kuan. All rights reserved.
 //
 
-#ifndef MainWindowController_h
-#define MainWindowController_h
 #import <Cocoa/Cocoa.h>
-#import <AppKit/AppKit.h>
-@interface MainWindowController : NSWindowController{
-    
+
+@interface MainPage : NSWindowController{
     
 }
 @property(nonatomic, retain)IBOutlet NSTextField* articleName;
-@property (weak) IBOutlet NSView *contents;
+@property (unsafe_unretained) IBOutlet NSTextView *contents;
 
 @property(nonatomic, retain)IBOutlet NSOutlineView* articleList;
 
@@ -25,4 +22,3 @@
 - (IBAction)onResetClick:(id)sender;
 - (IBAction)onSubmmitClick:(id)sender;
 @end
-#endif /* MainWindowController_h */
