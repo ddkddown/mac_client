@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #include "TcpConnect.hpp"
+#include "MainPage.h"
 @interface AppDelegate : NSObject <NSApplicationDelegate>{
-    TcpConnect test;
+        TcpConnect test;
 }
 
 @property(nonatomic, retain) IBOutlet NSTextField* username;

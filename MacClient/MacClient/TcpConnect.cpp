@@ -24,7 +24,9 @@ TcpConnect::~TcpConnect(){
 void TcpConnect::set_server_ip_port(std::string tmp_ip, int tmp_port){
     std::ifstream fs;
     boost::property_tree::ptree ptree;
-    fs.open("/Users/dongdakuan/Downloads/MacClient/MacClient/conf/config.json",std::fstream::in);
+    
+    fs.open("/Users/dongdakuan/Downloads/SomeWhereClient_mac_git/mac/mac_client/MacClient/MacClient/conf/config.json ",std::fstream::in);
+    
     if(!fs.is_open()){
         std::cout<<"open config.json failed!"<<std::endl;
         exit(1);
@@ -32,6 +34,7 @@ void TcpConnect::set_server_ip_port(std::string tmp_ip, int tmp_port){
     std::string s((std::istreambuf_iterator<char>(fs)),
                   std::istreambuf_iterator<char>());
     std::stringstream ss(s);
+    fs.close();
     
     try {
         boost::property_tree::read_json(ss, ptree);

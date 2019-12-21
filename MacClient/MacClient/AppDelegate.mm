@@ -11,6 +11,7 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+@property (strong) MainPage* mainPage;
 @end
 
 @implementation AppDelegate
@@ -66,13 +67,9 @@
     memcpy(&server_message, test.get_recv_buffer().c_str(), sizeof(reply_message));
     if(server_message.status == SUCCESS_STATUS){
         std::cout<<"message type: "<<server_message.type<<"success"<<std::endl;
-        //隐藏登录界面
-        //[[self.view window] orderOut:nil];
-        
-        //显示主窗口
-        //MainWindowController* mainWindowControl = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
-        //[mainWindowControl showWindow:self];
-        
+        [self.window orderOut:nil];
+        MainPage* mainPageControl = [[MainPage alloc] initWithWindowNibName:@"MainPage" owner:self];
+        [mainPageControl showWindow:self];
         
     }else if (server_message.status == FAIL_STATUS){
         std::cout<<"message type: "<<server_message.type<<"failed!"<<std::endl;
